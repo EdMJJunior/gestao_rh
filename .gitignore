@@ -1,3 +1,6 @@
 .idea
 *.sqlite3
 venv
+*.pyc
+_migrations/*
+!_migrations/__init__.py
