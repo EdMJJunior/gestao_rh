@@ -2,7 +2,5 @@
 *.sqlite3
 venv
 *.pyc
-_migrations/*
+gestao_rh/__pycache__/
 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
-/apps/funcionarios/migrations/0001_initial.py
-/apps/departamentos/migrations/0001_initial.py
