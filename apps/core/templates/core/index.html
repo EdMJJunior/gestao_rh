@@ -17,16 +17,28 @@
         <div class="col-sm">
             Seja bem vindo(a) {{ usuario.funcionario.nome|title }}
         </div>
+
+        <div class="col-sm">
+            <a href="{% url 'list_funcionarios' %}"> gerenciar funcionarios</a>
+            <br>
+            <a href="{% url 'list_departamentos' %}">gerenciar departamentos</a>
+            <br>
+            <a href="{% url 'list_hora_extra' %}">gerenciar hora extra</a>
+
+
+        </div>
+
+
         <div class="col-sm">
             <a href=" {% url 'logout' %} " > logout</a>
 
             {% if usuario.funcionario.empresa %}
 
-            <a href=""> Editar </a>
+            <a href="{% url 'edit_empresa' usuario.funcionario.empresa.pk %}"> Editar </a>
 
             {% else %}
 
-            <a href="{% url  'create_empresa' %}"> criar </a>
+            <a href="{% url  'create_empresa' %}" class="button"> criar </a>
 
             {% endif %}
 
