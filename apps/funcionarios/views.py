@@ -17,9 +17,9 @@ class FuncionariosList(ListView , LoginRequiredMixin):
 
 
 class FuncionarioEdit(UserPassesTestMixin, UpdateView, ):
+    fields = ['nome' , 'departamentos']
     model = Funcionario
 
-    fields = ['nome' , 'departamentos']
 
 
 
