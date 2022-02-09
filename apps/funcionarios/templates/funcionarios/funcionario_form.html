@@ -12,9 +12,10 @@
 </form>
 <br>
 
-{% if object %}
 
 <a href="{% url 'create_documento' object.id %}" class="btn btn-info">Adicionar documento</a>
+
+{% if object %}
 
 <br>
 {%for documento in object.documento_set.all %}
