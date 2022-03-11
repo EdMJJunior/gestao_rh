@@ -13,19 +13,39 @@
 <br>
 
 
-<a href="{% url 'create_documento' object.id %}" class="btn btn-info">Adicionar documento</a>
 
 {% if object %}
+    <h3>Documentos</h3>
+    <ul>
+        {%for documento in object.documento_set.all %}
+
+          <li>  <a href="{{ documento.arquivo.url }}">{{ documento }}</a></li>
+
+
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-info">Adicionar documento</a>
+
 
 <br>
-{%for documento in object.documento_set.all %}
 
-<a href="{{ documento.arquivo.url }}">{{ documento }}</a>
-<br>
+    <h3>Horas Extras</h3>
+
+    <ul>
+    {%for registro in object.registrohoraextra_set.all %}
+
+        <li>  <a href="{% url 'edit_hora_extra_funcionario' registro.id %}">{{ registro }} | {{ registro.horas }}</a></li>
+
+
+    {% endfor %}
+    </ul>
+    <a href="{% url 'create_hora_extra' %}" class="btn btn-info">Adicionar Hora extra</a>
+
+
+    <h4>Total hora extra {{ object.total_hora_extra }}</h4>
 
 
 
-{% endfor %}
 {% endif %}
 
 {%endblock%}

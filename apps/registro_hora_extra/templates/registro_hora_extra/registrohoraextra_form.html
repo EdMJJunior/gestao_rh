@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% load static %}
 
 
 
@@ -18,6 +19,22 @@
 
 </form>
 
+
+    <button onclick='utilizouHoraExtra({{ object.id }})' class='btn btn-primary'>
+        utilizou hora extra         
+    </button>
+
+
+
+
+{%endblock%}
+
+
+
+{% block statics %}
+
+    <script  src="{% static 'js/jquery.js' %}"></script>
+    <script  src="{% static 'js/funcoes-ajax.js' %}" >   </script>
 
 
 {%endblock%}
